@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Elenaaaa <3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      color: #4a4a4a;
+      position: relative;
+      transition: background 0.8s ease;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4b2b;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    .music-control {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #ff758f;
+      border-radius: 50px;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ff3366;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 30px 25px;
+      max-width: 460px;
+      width: 90%;
+      box-shadow: 0 15px 35px rgba(255, 75, 110, 0.25);
+      text-align: center;
+      z-index: 10;
+      position: relative;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    h1, h2 {
+      font-family: 'Dancing Script', cursive;
+      color: #ff3366;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 65, 108, 0.6);
+    }
+
+    .hidden { display: none !important; }
+
+    .opt-btn {
+      display: block;
+      width: 100%;
+      background: #fff;
+      border: 2px solid #ff758f;
+      color: #d81159;
+      padding: 10px 15px;
+      border-radius: 15px;
+      margin: 8px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .opt-btn:hover {
+      background: #ff758f;
+      color: white;
+    }
+
+    .pass-input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #ff758f;
+      outline: none;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* ARCHERY GAME */
+    .archery-area {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: #ffe6eb;
+      border: 2px dashed #ff436b;
+      border-radius: 15px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    .target-heart {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      font-size: 38px;
+      transform: translateX(-50%);
+      animation: moveTarget 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveTarget {
+      0% { left: 15%; }
+      100% { left: 85%; }
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      font-size: 28px;
+      transform: translateX(-50%);
+      transition: bottom 0.4s ease-out;
+    }
+
+    /* CLAW MACHINE */
+    .claw-machine {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: #fff0f5;
+      border: 3px solid #ff4d6d;
+      border-radius: 15px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    .claw-arm {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 30px;
+      background: #555;
+      transform: translateX(-50%);
+      animation: moveClaw 2.5s infinite alternate ease-in-out;
+      transition: height 0.8s ease;
+    }
+
+    @keyframes moveClaw {
+      0% { left: 15%; }
+      100% { left: 85%; }
+    }
+
+    .claw-head {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+    }
+
+    .capsules {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      font-size: 32px;
+    }
+
+    /* SECRET BOXES */
+    .boxes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .secret-box {
+      background: #fff;
+      border: 2px dashed #ff436b;
+      padding: 15px 5px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .secret-box:hover {
+      transform: translateY(-5px);
+      background: #ffe6eb;
+    }
+
+    /* KALENDER */
+    .calendar-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(255, 117, 143, 0.2);
+      margin: 15px 0;
+      border: 2px solid #ffb3c1;
+    }
+
+    .calendar-header {
+      font-weight: 600;
+      color: #d81159;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      font-size: 0.8rem;
+    }
+
+    .day-name { font-weight: 600; color: #ff4d6d; }
+    .day-num { padding: 6px 0; border-radius: 8px; color: #555; }
+
+    .special-day {
+      background: #ff3366;
+      color: white !important;
+      font-weight: bold;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 51, 102, 0.6);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* CAKE */
+    .cake-container {
+      position: relative;
+      margin: 30px auto 10px;
+      width: 150px;
+      height: 120px;
+    }
+
+    .cake {
+      width: 150px;
+      height: 80px;
+      background: #ff8fa3;
+      position: absolute;
+      bottom: 0;
+      border-radius: 10px 10px 0 0;
+      box-shadow: inset 0 12px #ffb3c1, inset 0 25px #ff758f;
+    }
+
+    .candle {
+      width: 12px;
+      height: 45px;
+      background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4d6d 5px, #ff4d6d 10px);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+
+    .flame {
+      width: 14px;
+      height: 22px;
+      background: #ffb703;
+      border-radius: 50% 50% 20% 20%;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 15px #ffb703;
+      animation: flicker 0.6s infinite alternate;
+      cursor: pointer;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+    }
+
+    /* WISH TEXT & BIBLE VERSE */
+    .wish-text, .bible-card {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+      margin: 20px 0;
+      background: rgba(255, 240, 245, 0.85);
+      padding: 20px;
+      border-radius: 18px;
+      border-left: 5px solid #ff3366;
+    }
+
+    .bible-card {
+      text-align: center;
+      border-left: none;
+      border: 2px dashed #ff758f;
+      background: #ffffff;
+    }
+
+    .highlight { color: #ff3366; font-weight: 600; }
+
+    .wa-btn {
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    .wa-btn:hover { transform: scale(1.05); background: #1eb854; }
+
+    .tiktok-btn {
+      background: #000;
+      color: white;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 15px;
+      font-weight: 600;
+      margin: 10px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    .tiktok-btn:hover { transform: scale(1.03); background: #222; }
+
+    .page-indicator { font-size: 0.8rem; color: #ff416c; font-weight: 600; margin-bottom: 10px; }
+
+    /* RUNAWAY BUTTON */
+    .run-btn-container {
+      position: relative;
+      height: 120px;
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #btn-no {
+      position: absolute;
+      transition: all 0.2s ease;
+      background: #6c757d;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* LOVE JAR */
+    .jar-wrapper {
+      position: relative;
+      width: 140px;
+      height: 180px;
+      margin: 15px auto;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      border-top: 10px solid rgba(255, 255, 255, 0.9);
+      border-radius: 20px 20px 50px 50px;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 25px rgba(255, 51, 102, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-wrap: wrap-reverse;
+      align-content: flex-start;
+      justify-content: center;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .jar-heart {
+      font-size: 22px;
+      margin: -2px;
+      animation: heartGlow 1.5s infinite alternate;
+    }
+
+    @keyframes heartGlow {
+      0% { transform: scale(0.9); filter: drop-shadow(0 0 2px #ff3366); }
+      100% { transform: scale(1.1); filter: drop-shadow(0 0 8px #ff0055); }
+    }
+
+    /* PIXEL HEART */
+    .pixel-heart-container { margin: 20px auto; display: flex; justify-content: center; align-items: center; }
+
+    .pixel-heart {
+      font-size: 75px;
+      line-height: 1;
+      color: #ff0055;
+      text-shadow: 0 0 10px #ff0055, 0 0 20px #ff3366, 0 0 30px #ff6699;
+      animation: pixelPulse 1.2s infinite ease-in-out;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    @keyframes pixelPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+      100% { transform: scale(1); }
+    }
+
+    /* SPAM LOVE BTN */
+    .spam-heart-btn {
+      font-size: 60px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .spam-heart-btn:active {
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+<body id="body-bg">
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="iknewyou.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-control" onclick="toggleMusic()">🎵 Music On/Off</button>
+  <div id="hearts-container"></div>
+
+  <div class="container">
+    
+    <!-- PINTU RAHASIA -->
+    <div id="game-intro">
+      <div class="page-indicator">Games Pembuka 🔑</div>
+      <h1 style="font-size: 2.3rem;">Kunci Rahasia</h1>
+      <p style="font-size: 0.88rem; margin: 15px 0 10px;">Masukkan nama panggilan kesayangan kamu untuk membuka kejutan ini!</p>
+      <input type="text" id="name-input" class="pass-input" placeholder="Ketik nama kamu di sini...">
+      <br>
+      <button class="btn" onclick="checkOpeningGame()">Buka Pintu ✨</button>
+      <p id="intro-error" style="color: red; font-size: 0.8rem; margin-top: 10px; display: none;">Nama salah! Coba ketik "Elena" atau "Elenaaaa" 😉</p>
+    </div>
+
+    <!-- WELCOME / START MAGIC -->
+    <div id="step-1" class="hidden">
+      <h1 style="font-size: 2.5rem;">For My Precious</h1>
+      <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Elenaaaa &lt;3</h2>
+      <p style="font-size: 0.9rem; margin-bottom: 20px;">Kuncinya terbuka! Siap lanjut ke 7 mini games utama?</p>
+      <button class="btn" onclick="startExperience()">Start Magic ✨</button>
+    </div>
+
+    <!-- GAME UTAMA 1: ARCHERY -->
+    <div id="game-1" class="hidden">
+      <div class="page-indicator">Game Utama 1 dari 7 🏹</div>
+      <h2>Memanah Hati Elena 🏹❤️</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 10px;">Lepaskan anak panah tepat saat sasaran hati sejajar!</p>
+      
+      <div class="archery-area">
+        <div class="target-heart" id="target-heart">💖</div>
+        <div class="arrow" id="arrow">🏹</div>
+      </div>
+
+      <button class="btn" onclick="shootArrow()">Lepas Panah! 🎯</button>
+      <p id="archery-status" style="font-size: 0.85rem; font-weight: 600; color: #ff3366; margin-top: 10px;"></p>
+    </div>
+
+    <!-- GAME UTAMA 2 -->
+    <div id="game-2" class="hidden">
+      <div class="page-indicator">Game Utama 2 dari 7</div>
+      <h2>Tes Kejujuran Lucu 🤫</h2>
+      <p style="font-size: 0.9rem; margin-bottom: 15px;">Siapa orang paling ter-lucu, paling imut, dan paling ngangenin hari ini?</p>
+      <button class="opt-btn" onclick="nextGame(2)">A. Elenaaaa &lt;3</button>
+      <button class="opt-btn" onclick="nextGame(2)">B. Tentu saja Elenaaaa &lt;3</button>
+      <button class="opt-btn" onclick="nextGame(2)">C. Pastinya Elenaaaa &lt;3 dong!</button>
+    </div>
+
+    <!-- GAME UTAMA 3 -->
+    <div id="game-3" class="hidden">
+      <div class="page-indicator">Game Utama 3 dari 7</div>
+      <h2>Kirim Senyuman ☺️</h2>
+      <p style="font-size: 0.9rem; margin-bottom: 15px;">Tekan tombol di bawah untuk mengirimkan senyuman ter-manis kamu hari ini!</p>
+      <button class="btn" onclick="nextGame(3)">Kirim Senyuman Termanis 🌟</button>
+    </div>
+
+    <!-- GAME UTAMA 4 -->
+    <div id="game-4" class="hidden">
+      <div class="page-indicator">Game Utama 4 dari 7</div>
+      <h2>Pilih Mood Kamu Hari Ini 🎨</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 15px;">Pilih warna mood spesial ulang tahunmu!</p>
+      <button class="opt-btn" onclick="nextGame(4)">🌸 Pink Pastel (Full Kasih Sayang)</button>
+      <button class="opt-btn" onclick="nextGame(4)">✨ Gold Sparkle (Si Paling Bersinar)</button>
+      <button class="opt-btn" onclick="nextGame(4)">💖 Bright Crimson (Cinta Bertebaran)</button>
+    </div>
+
+    <!-- GAME UTAMA 5 -->
+    <div id="game-5" class="hidden">
+      <div class="page-indicator">Game Utama 5 dari 7</div>
+      <h2>Koleksi Harapan 🌠</h2>
+      <p style="font-size: 0.88rem; margin-bottom: 15px;">Pilih salah satu bintang harapanmu untuk hari ini!</p>
+      <button class="opt-btn" onclick="nextGame(5)">⭐ Kebahagiaan Tanpa Batas</button>
+      <button class="opt-btn" onclick="nextGame(5)">🌟 Selalu Dikelilingi Orang Baik</button>
+      <button class="opt-btn" onclick="nextGame(5)">✨ Semua Impian Terwujud</button>
+    </div>
+
+    <!-- GAME UTAMA 6 -->
+    <div id="game-6" class="hidden">
+      <div class="page-indicator">Game Utama 6 dari 7</div>
+      <h2>Ungkapan Rasa Sayang 🤍</h2>
+      <p style="font-size: 0.88rem; margin-bottom: 15px;">Seberapa besar rasa sayang kamu buat orang-orang di sekitar kamu?</p>
+      <button class="opt-btn" onclick="nextGame(6)">100% Sayang Banget!</button>
+      <button class="opt-btn" onclick="nextGame(6)">1000% Nggak Ada Tandingannya!</button>
+    </div>
+
+    <!-- GAME UTAMA 7 -->
+    <div id="game-7" class="hidden">
+      <div class="page-indicator">Game Utama 7 dari 7</div>
+      <h2>Janji Ulang Tahun 🤙</h2>
+      <p style="font-size: 0.88rem; margin-bottom: 15px;">Janji yaaa hari ini harus senyum terus, nggak boleh sedih, dan harus bahagia terus?</p>
+      <button class="btn" onclick="finishGames()">Janji 1000% !! ✨💖</button>
+    </div>
+
+    <!-- KALENDER SPESIAL -->
+    <div id="step-calendar" class="hidden">
+      <div class="page-indicator">A Very Special Day 🗓️</div>
+      <h2>The World Was Blessed On...</h2>
+      <p style="font-size: 0.85rem; margin-top: 5px;">Hari di mana sosok paling berharga lahir ke dunia ✨</p>
+      
+      <div class="calendar-card">
+        <div class="calendar-header">Agustus 2010</div>
+        <div class="calendar-grid">
+          <div class="day-name">Ming</div><div class="day-name">Sen</div><div class="day-name">Sel</div>
+          <div class="day-name">Rab</div><div class="day-name">Kam</div><div class="day-name">Jum</div><div class="day-name">Sab</div>
+
+          <div class="day-num">1</div><div class="day-num">2</div><div class="day-num">3</div><div class="day-num">4</div>
+          <div class="day-num">5</div><div class="day-num">6</div><div class="day-num">7</div><div class="day-num">8</div>
+          <div class="day-num">9</div><div class="day-num">10</div><div class="day-num">11</div><div class="day-num">12</div>
+          <div class="day-num">13</div><div class="day-num">14</div><div class="day-num">15</div><div class="day-num">16</div>
+          <div class="day-num">17</div><div class="day-num">18</div><div class="day-num">19</div><div class="day-num">20</div>
+          <div class="day-num">21</div><div class="day-num">22</div>
+          <div class="day-num special-day">23</div>
+          <div class="day-num">24</div><div class="day-num">25</div><div class="day-num">26</div><div class="day-num">27</div>
+          <div class="day-num">28</div><div class="day-num">29</div><div class="day-num">30</div><div class="day-num">31</div>
+        </div>
+      </div>
+      
+      <p style="font-size: 0.9rem; font-weight: 600; color: #ff3366;">23 Agustus 2010 💖</p>
+      <button class="btn" onclick="goToCandle()">Lanjut Tiup Lilin 🎂</button>
+    </div>
+
+    <!-- CANDLE SECTION -->
+    <div id="step-candle" class="hidden">
+      <h2>Make a Wish 🌟</h2>
+      <p style="font-size: 0.85rem;">Tutup matamu, panjatkan doa terbaikmu, lalu **klik api lilinnya** untuk memadamkan lilin!</p>
+      <div class="cake-container">
+        <div class="candle">
+          <div class="flame" id="flame" onclick="blowCandle()"></div>
+        </div>
+        <div class="cake"></div>
+      </div>
+    </div>
+
+    <!-- WISH & MESSAGE -->
+    <div id="step-wish" class="hidden">
+      <h1 style="font-size: 2.2rem;">Happy Birthday,</h1>
+      <h2 style="font-size: 2rem; margin-bottom: 10px;">Elenaaaa &lt;3 🎉</h2>
+      
+      <div class="wish-text">
+        <p><i>To the person who makes the universe feel a little warmer and infinitely brighter,</i> <span class="highlight">Elenaaaa &lt;3</span> ✨</p>
+        <br>
+        <p>Di antara jutaan rotasi waktu dan riuhnya riak dunia, hari ini semesta seolah berhenti sejenak untuk merayakan hadirmu. <i>To be completely honest,</i> kata-kata konvensional rasanya terlalu sempit untuk merangkum betapa berharganya keberadaanmu. Kamu adalah gabungan dari ketenangan dan keindahan; <i>a rare masterpiece crafted with grace, kindness, and magic.</i></p>
+        <br>
+        <p>Terima kasih sudah tumbuh menjadi sosok yang begitu luar biasa. Kehadiranmu bukan sekadar ada, melainkan seperti pendar lentera di tengah redupnya malam—<i>you naturally heal and brighten everything around you without even trying.</i> Terima kasih sudah melangkah sejauh ini dengan segala kebaikan dan keteguhan hatimu.</p>
+        <br>
+        <p><i>On this precious milestone of your life, my deepest wish for you is simple yet profound:</i> Semoga lalu lalang langkahmu selalu dituntun menuju kebahagiaan yang riil. Semoga setiap babak baru yang kamu buka dipenuhi oleh pelukan hangat, kedamaian pikiran, dan mimpi-mimpi indah yang terwujud satu per satu. <i>May the universe always treat you with gentle hands and endlessly favor your heart.</i></p>
+        <br>
+        <p>Jangan pernah meragukan kilau yang kamu miliki. Tetaplah jadi diri kamu yang penuh pesona ini, <i>because in a world full of temporary things, you are a forever kind of blessing.</i> Happy Birthday, my most favorite soul.</p>
+        <br>
+        <p style="text-align: center; font-weight: 600; font-size: 1.1rem; color: #ff3366;">Forever cherished & loved 🤍✨</p>
+      </div>
+
+      <button class="btn" onclick="goToBibleVerse()">Lihat Ayat Alkitab Spesial 📖✨</button>
+    </div>
+
+    <!-- PAGE BARU: AYAT ALKITAB UNTUK MU -->
+    <div id="step-bible" class="hidden">
+      <div class="page-indicator">Special Blessing 📖✨</div>
+      <h2>Ayat Alkitab Untukmu 🕊️</h2>
+      
+      <div class="bible-card">
+        <p style="font-weight: 600; color: #d81159; margin-bottom: 6px;">Roma 15:13</p>
+        <p style="font-size: 0.88rem; font-style: italic; color: #4a4a4a;">"Moga-moga Allah, sumber pengharapan, memenuhi kamu dengan segala sukacita dan damai sejahtera dalam iman kamu, supaya oleh kekuatan Roh Kudus kamu berlimpah-limpah dalam pengharapan."</p>
+        <hr style="margin: 15px 0; border: none; border-top: 1px dashed #ffb3c1;">
+        <p style="font-weight: 600; color: #d81159; margin-bottom: 6px;">Yeremia 29:11</p>
+        <p style="font-size: 0.88rem; font-style: italic; color: #4a4a4a;">"Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu, demikianlah firman TUHAN, yaitu rancangan damai sejahtera dan bukan rancangan kecelakaan, untuk memberikan kepadamu hari depan yang penuh harapan."</p>
+      </div>
+
+      <button class="btn" onclick="startOutroGames()">Mulai Games Penutup 🎮✨</button>
+    </div>
+
+    <!-- OUTRO GAME 1: JAR CINTA -->
+    <div id="outro-1" class="hidden">
+      <div class="page-indicator">Games Penutup 1 🏺</div>
+      <h2>Love Jar For Elena 💖</h2>
+      <p style="font-size: 0.85rem; margin-top: 5px;">Toples ini berisi penuh limpahan cinta & doa manis khusus buat kamu!</p>
+      
+      <div class="jar-wrapper">
+        <span class="jar-heart">💖</span><span class="jar-heart">❤️</span><span class="jar-heart">💖</span>
+        <span class="jar-heart">❤️</span><span class="jar-heart">💕</span><span class="jar-heart">💖</span>
+        <span class="jar-heart">💖</span><span class="jar-heart">💖</span><span class="jar-heart">❤️</span>
+        <span class="jar-heart">💕</span><span class="jar-heart">💖</span><span class="jar-heart">💖</span>
+        <span class="jar-heart">💖</span><span class="jar-heart">❤️</span><span class="jar-heart">💕</span>
+        <span class="jar-heart">❤️</span><span class="jar-heart">💖</span><span class="jar-heart">💖</span>
+      </div>
+
+      <p style="font-size: 0.85rem; font-weight: 600; color: #ff3366;">Jar Level: 1000% Full of Love!</p>
+      <button class="btn" onclick="nextOutroGame(1)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 2: PIXEL HEART -->
+    <div id="outro-2" class="hidden">
+      <div class="page-indicator">Games Penutup 2 👾</div>
+      <h2>Retro Glowing Heart ✨</h2>
+      <p style="font-size: 0.85rem; margin-top: 5px;">Hati pixel ajaib yang selalu bersinar menerangi hari-harimu!</p>
+      
+      <div class="pixel-heart-container">
+        <div class="pixel-heart">♥</div>
+      </div>
+
+      <p style="font-size: 0.88rem; color: #ff3366; font-weight: 600;">"You radiate positivity wherever you go!"</p>
+      <button class="btn" onclick="nextOutroGame(2)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 3: TOMBOL KABUR -->
+    <div id="outro-3" class="hidden">
+      <div class="page-indicator">Games Penutup 3 🎯</div>
+      <h2>Pertanyaan Penting! 🤔</h2>
+      <p style="font-size: 0.9rem; margin-bottom: 10px;">Apakah kamu mau bahagia, tersenyum, dan ceria terus setiap hari?</p>
+
+      <div class="run-btn-container">
+        <button class="btn" style="position: relative; z-index: 2;" onclick="nextOutroGame(3)">IYA! Pasti 💖</button>
+        <button id="btn-no" onmouseover="runAwayBtn()" onclick="runAwayBtn()">Tidak 😜</button>
+      </div>
+
+      <p id="run-hint" style="font-size: 0.78rem; color: #ff3366; margin-top: 10px;">Coba deh tekan tombol 'Tidak' kalau bisa! 😉</p>
+    </div>
+
+    <!-- OUTRO GAME 4: FAKTA UNIK -->
+    <div id="outro-4" class="hidden">
+      <div class="page-indicator">Games Penutup 4 🌟</div>
+      <h2>Fun Fact Elena ✨</h2>
+      <p style="font-size: 0.88rem; margin: 15px 0;">Tahukah kamu? Tingkat keimutannya Elena itu melebihi batas rata-rata keindahan alam semesta!</p>
+      <div style="background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 15px; border: 2px dashed #ff758f;">
+        <p style="font-size: 0.9rem; font-weight: 600; color: #d81159;">Verified by Science 🧪 : 100% Truth!</p>
+      </div>
+      <button class="btn" onclick="nextOutroGame(4)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 5: TEBAK PERASAAN -->
+    <div id="outro-5" class="hidden">
+      <div class="page-indicator">Games Penutup 5 🔮</div>
+      <h2>Ramalan Senyuman 🔮</h2>
+      <p style="font-size: 0.88rem; margin-bottom: 15px;">Tekan bola kristal ini buat melihat ramalan hari ulang tahunmu!</p>
+      <button class="opt-btn" onclick="showFortune(this)">🔮 Sentuh Bola Kristal</button>
+      <p id="fortune-text" style="margin-top: 10px; font-weight: 600; color: #ff3366;" class="hidden">Ramalan: Hari ini kamu bakal dapat berton-ton kebahagiaan! 🎉</p>
+      <button id="outro-5-btn" class="btn hidden" onclick="nextOutroGame(5)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 6: SECRET NOTE BOX -->
+    <div id="outro-6" class="hidden">
+      <div class="page-indicator">Games Penutup 6 💌</div>
+      <h2>Secret Note Box 💌</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 10px;">Pilih salah satu kotak ajaib di bawah untuk membuka pesan rahasia buat kamu!</p>
+
+      <div class="boxes-grid">
+        <div class="secret-box" onclick="openSecretNote(1)">🎁</div>
+        <div class="secret-box" onclick="openSecretNote(2)">🎀</div>
+        <div class="secret-box" onclick="openSecretNote(3)">✨</div>
+      </div>
+
+      <div id="note-display" class="hidden" style="background: #fff; padding: 15px; border-radius: 15px; border: 2px solid #ff758f; margin-top: 10px;">
+        <p id="note-text" style="font-size: 0.88rem; color: #d81159; font-weight: 600;"></p>
+      </div>
+
+      <button id="outro-6-btn" class="btn hidden" onclick="nextOutroGame(6)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 7: CAPIT HARAPAN -->
+    <div id="outro-7" class="hidden">
+      <div class="page-indicator">Games Penutup 7 🕹️</div>
+      <h2>Mesin Capit Harapan 🎁</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 10px;">Tekan tombol di bawah untuk membidik & menurunkan capit!</p>
+
+      <div class="claw-machine">
+        <div class="claw-arm" id="claw-arm">
+          <div class="claw-head">🤖</div>
+        </div>
+        <div class="capsules">
+          <span>🎁</span>
+          <span>🔮</span>
+          <span>🎀</span>
+        </div>
+      </div>
+
+      <button id="claw-btn" class="btn" onclick="startClawGame()">Turunkan Capit! 🕹️</button>
+
+      <div id="claw-result" class="hidden" style="background: #fff; padding: 15px; border-radius: 15px; border: 2px solid #ff758f; margin-top: 12px;">
+        <p id="claw-text" style="font-size: 0.88rem; color: #d81159; font-weight: 600;"></p>
+      </div>
+
+      <button id="outro-7-btn" class="btn hidden" onclick="nextOutroGame(7)">Lanjut 👉</button>
+    </div>
+
+    <!-- OUTRO GAME 8: SPAM LOVE TO WHATSAPP -->
+    <div id="outro-8" class="hidden">
+      <div class="page-indicator">Games Penutup 8 💌</div>
+      <h2>Spam Love U To WhatsApp 💖</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 10px;">Klik tombol Hati sebanyak-banyaknya buat nambah teks "Love U" yang bakal dikirim ke WhatsApp!</p>
+
+      <button class="spam-heart-btn" onclick="addSpamLove()">💖</button>
+      <p style="font-size: 1.1rem; font-weight: 600; color: #ff3366;">Jumlah Love U: <span id="spam-count">0</span></p>
+
+      <a id="spam-wa-link" href="#" class="wa-btn" target="_blank" onclick="sendSpamWA()">Kirim Spam Love U via WA 💬</a>
+      <br>
+      <button class="btn" onclick="nextOutroGame(8)">Lanjut Ke Video TikTok 🎬</button>
+    </div>
+
+    <!-- OUTRO GAME 9: TIKTOK VIDEO LINKS -->
+    <div id="outro-9" class="hidden">
+      <div class="page-indicator">Games Penutup 9 🎬</div>
+      <h2>Special TikTok Videos 🎥</h2>
+      <p style="font-size: 0.88rem; margin-bottom: 15px;">Ada dua video TikTok spesial khusus buat kamu! Tonton dengan klik tombol di bawah:</p>
+
+      <a href="https://vt.tiktok.com/ZS4GtKUPV/" target="_blank" class="tiktok-btn">▶️ Tonton Video TikTok Spesial 1</a>
+      <a href="https://vt.tiktok.com/ZS4GnYm32/" target="_blank" class="tiktok-btn">▶️ Tonton Video TikTok Spesial 2</a>
+
+      <button class="btn" onclick="nextOutroGame(9)" style="margin-top: 15px;">Lanjut Halaman Akhir 🎉</button>
+    </div>
+
+    <!-- OUTRO GAME 10: FINAL WHATSAPP MESSAGE (BEBAS KETIK BALASAN) -->
+    <div id="outro-10" class="hidden">
+      <div class="page-indicator">The Final Magic Moment 🎉</div>
+      <h2>Happy Birthday Elenaaaa <3</h2>
+      <p style="font-size: 0.9rem; margin-bottom: 15px;">Kamu berhasil menyelesaikan seluruh Mini Games & Kejutan Spesial ini!</p>
+      <p style="font-size: 0.85rem; color: #555; margin-bottom: 20px;">Terima kasih udah jadi orang yang begitu hebat dan manis. Kamu bisa kirim balasan langsung lewat WhatsApp di bawah ini ya!</p>
+
+      <!-- Mengarahkan ke obrolan WA tanpa draf pesan otomatis -->
+      <a href="https://wa.me/6283197339752" class="wa-btn" target="_blank">Kirim Balasan via WhatsApp 💬</a>
+    </div>
+
+  </div>
+
+  <script>
+    let noBtnClickCount = 0;
+    let spamCount = 0;
+    const music = document.getElementById('bg-music');
+    const bodyBg = document.getElementById('body-bg');
+
+    const gradients = [
+      'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+      'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+      'linear-gradient(135deg, #ffb199 0%, #ff0844 100%)',
+      'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)',
+      'linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)',
+      'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+      'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
+      'linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%)',
+      'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+      'linear-gradient(135deg, #ff1361 0%, #fff800 100%)',
+      'linear-gradient(135deg, #13547a 0%, #80d0c7 100%)',
+      'linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)',
+      'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)',
+      'linear-gradient(135deg, #ff9a9e 0%, #feada6 100%)',
+      'linear-gradient(135deg, #2b5876 0%, #4e4376 100%)',
+      'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+      'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
+      'linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%)',
+      'linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)',
+      'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+      'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+    ];
+
+    function changeBg(index) {
+      if (gradients[index]) {
+        bodyBg.style.background = gradients[index];
+      }
+    }
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+
+    function createHearts() {
+      const container = document.getElementById('hearts-container');
+      const heartArr = ['💖', '💗', '💕', '🌸', '✨'];
+      
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerText = heartArr[Math.floor(Math.random() * heartArr.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+        container.appendChild(heart);
+
+        setTimeout(() => { heart.remove(); }, 6000);
+      }, 300);
+    }
+
+    createHearts();
+
+    function checkOpeningGame() {
+      const val = document.getElementById('name-input').value.trim().toLowerCase();
+      if (val.includes('elena')) {
+        music.play().catch(e => console.log("Autoplay blocked"));
+        document.getElementById('game-intro').classList.add('hidden');
+        document.getElementById('step-1').classList.remove('hidden');
+        changeBg(1);
+      } else {
+        document.getElementById('intro-error').style.display = 'block';
+      }
+    }
+
+    function startExperience() {
+      document.getElementById('step-1').classList.add('hidden');
+      document.getElementById('game-1').classList.remove('hidden');
+      changeBg(2);
+    }
+
+    /* GAME MEMANAH */
+    let shotTaken = false;
+    function shootArrow() {
+      if (shotTaken) return;
+      shotTaken = true;
+
+      const arrow = document.getElementById('arrow');
+      arrow.style.bottom = '130px';
+
+      setTimeout(() => {
+        document.getElementById('archery-status').innerText = '🎯 Tepat Mengenai Hati! Cinta Tersemai ✨';
+        setTimeout(() => {
+          document.getElementById('game-1').classList.add('hidden');
+          document.getElementById('game-2').classList.remove('hidden');
+          changeBg(3);
+        }, 1200);
+      }, 400);
+    }
+
+    function nextGame(currentStep) {
+      document.getElementById(`game-${currentStep}`).classList.add('hidden');
+      document.getElementById(`game-${currentStep + 1}`).classList.remove('hidden');
+      changeBg(currentStep + 2);
+    }
+
+    function finishGames() {
+      document.getElementById('game-7').classList.add('hidden');
+      document.getElementById('step-calendar').classList.remove('hidden');
+      changeBg(9);
+    }
+
+    function goToCandle() {
+      document.getElementById('step-calendar').classList.add('hidden');
+      document.getElementById('step-candle').classList.remove('hidden');
+      changeBg(10);
+    }
+
+    function blowCandle() {
+      document.getElementById('flame').style.display = 'none';
+      setTimeout(() => {
+        document.getElementById('step-candle').classList.add('hidden');
+        document.getElementById('step-wish').classList.remove('hidden');
+        changeBg(11);
+      }, 1000);
+    }
+
+    function goToBibleVerse() {
+      document.getElementById('step-wish').classList.add('hidden');
+      document.getElementById('step-bible').classList.remove('hidden');
+      changeBg(12);
+    }
+
+    function startOutroGames() {
+      document.getElementById('step-bible').classList.add('hidden');
+      document.getElementById('outro-1').classList.remove('hidden');
+      changeBg(13);
+    }
+
+    function nextOutroGame(step) {
+      document.getElementById(`outro-${step}`).classList.add('hidden');
+      document.getElementById(`outro-${step + 1}`).classList.remove('hidden');
+      changeBg(13 + step);
+    }
+
+    function runAwayBtn() {
+      const btnNo = document.getElementById('btn-no');
+      noBtnClickCount++;
+
+      const randomX = (Math.random() - 0.5) * 200;
+      const randomY = (Math.random() - 0.5) * 100;
+      const newScale = Math.max(0, 1 - noBtnClickCount * 0.25);
+      const newOpacity = Math.max(0, 1 - noBtnClickCount * 0.25);
+
+      btnNo.style.transform = `translate(${randomX}px, ${randomY}px) scale(${newScale})`;
+      btnNo.style.opacity = newOpacity;
+
+      if (noBtnClickCount >= 4) {
+        btnNo.style.pointerEvents = 'none';
+        btnNo.style.display = 'none';
+        document.getElementById('run-hint').innerText = "Tuh kan! Tombol 'Tidak' kabur & hilang, berarti kamu WAJIB tekan 'IYA'! 😜💖";
+      }
+    }
+
+    function showFortune(btnElem) {
+      btnElem.classList.add('hidden');
+      document.getElementById('fortune-text').classList.remove('hidden');
+      document.getElementById('outro-5-btn').classList.remove('hidden');
+    }
+
+    function openSecretNote(boxNum) {
+      const notes = [
+        "\"You are built with so much grace and beauty, inside and out. Always remember how truly irreplaceable you are! 🌸\"",
+        "\"Semoga setiap helai senyummu hari ini membawa keberkahan dan kebahagiaan tanpa henti untuk selamanya! ✨\"",
+        "\"In a universe of infinite stars, your presence shines the brightest. Never let anyone dull your sparkle! 💖\""
+      ];
+      
+      document.getElementById('note-text').innerText = notes[boxNum - 1];
+      document.getElementById('note-display').classList.remove('hidden');
+      document.getElementById('outro-6-btn').classList.remove('hidden');
+    }
+
+    /* GAME CAPIT HARAPAN */
+    function startClawGame() {
+      const clawArm = document.getElementById('claw-arm');
+      const clawBtn = document.getElementById('claw-btn');
+      
+      clawBtn.disabled = true;
+      
+      const currentLeft = window.getComputedStyle(clawArm).getPropertyValue('left');
+      clawArm.style.animation = 'none';
+      clawArm.style.left = currentLeft;
+
+      clawArm.style.height = '140px';
+
+      setTimeout(() => {
+        clawArm.style.height = '30px';
+        setTimeout(() => {
+          const praises = [
+            "🎁 Kamu mendapatkan Kapsul Harapan: \"Semoga hari-harimu selalu dikelilingi oleh tawa, kebahagiaan, dan cinta yang tulus! ✨\"",
+            "🔮 Kamu mendapatkan Bola Ajaib: \"Kehadiranmu adalah berkah indah buat orang-orang di sekitarmu. Never stop shining! 🌸\"",
+            "🎀 Kamu mendapatkan Pita Cinta: \"In a universe of infinite possibilities, having you in this world is the best thing ever! 💖\""
+          ];
+          const randomPraise = praises[Math.floor(Math.random() * praises.length)];
+          
+          document.getElementById('claw-text').innerText = randomPraise;
+          document.getElementById('claw-result').classList.remove('hidden');
+          document.getElementById('outro-7-btn').classList.remove('hidden');
+          clawBtn.classList.add('hidden');
+        }, 800);
+      }, 900);
+    }
+
+    /* SPAM LOVE U */
+    function addSpamLove() {
+      spamCount++;
+      document.getElementById('spam-count').innerText = spamCount;
+    }
+
+    function sendSpamWA() {
+      const phoneNumber = "6283197339752";
+      let loveText = "";
+      if (spamCount === 0) {
+        loveText = "Love U 💖";
+      } else {
+        for (let i = 0; i < spamCount; i++) {
+          loveText += "Love U 💖 ";
+        }
+      }
+      const message = encodeURIComponent(`Nih dapet ${spamCount > 0 ? spamCount : 1}x ungkapan cinta dari web ulang tahun: \n\n${loveText}`);
+      document.getElementById('spam-wa-link').href = `https://wa.me/${phoneNumber}?text=${message}`;
+    }
+  </script>
+</body>
+</html>
